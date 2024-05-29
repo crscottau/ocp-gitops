@@ -14,8 +14,8 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: gitops/acm-oauth-policy
-    repoURL: https://github.com/crscottau/openshift-gitops.git
+    path: acm-oauth-policy
+    repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}

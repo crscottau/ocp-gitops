@@ -12,8 +12,8 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: gitops/chrony
-    repoURL: https://github.com/crscottau/openshift-gitops.git
+    path: chrony
+    repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}
