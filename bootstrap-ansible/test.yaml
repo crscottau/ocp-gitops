@@ -1,0 +1,10 @@
+---
+- name: Setup Cert Manager, OpenShift GitOps and start building applications
+  hosts: localhost
+  connection: local
+  tasks:
+
+  - name: test
+    ansible.builtin.template:
+      src: ca-root-secret.yaml.j2
+      dest: ca-root-secret.yaml

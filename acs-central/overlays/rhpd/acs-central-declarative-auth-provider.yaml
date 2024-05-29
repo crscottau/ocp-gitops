@@ -1,0 +1,5 @@
+name: OpenShift Auth
+minimumRole: Analyst 
+uiEndpoint: central-central.apps.9ktdj.dynamic.redhatworkshops.io:443 
+extraUIEndpoints: 
+    - central-central.apps.9ktdj.dynamic.redhatworkshops.io:443 

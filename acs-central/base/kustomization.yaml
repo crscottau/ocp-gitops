@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- acs-central-namespace.yaml
+- acs-operatorgroup.yaml
+- acs-subscription.yaml
+- acs-central.yaml
+- acs-central-declarative-auth-provider.yaml
