@@ -14,7 +14,7 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: acs-central
+    path: acs-central/overlays/rhpd
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
