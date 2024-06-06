@@ -1,11 +1,10 @@
 apiVersion: v1
+data:
+  acs-central-declarative-auth-provider.yaml: "name: OpenShift Auth\nminimumRole:
+    Analyst \nuiEndpoint: central-central.svc:443 \ngroups: \n    - key: groups\n
+    \     value: cluster-admins\n      role: Admin\nopenshift: \n    enable: true\n"
 kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: declarative-configurations
   namespace: central
-data:
-  acs-central-declarative-auth-provider.yaml: "name: OpenShift Auth\nminimumRole:
-    Analyst \nuiEndpoint: central-central.apps.2b4f4.dynamic.redhatworkshops.io:443
-    \ngroups: \n    - key: groups\n      value: cluster-admins\n      role: Admin\nopenshift:
-    \n    enable: true\n"
