@@ -6,4 +6,4 @@ resources:
 - acs-operatorgroup.yaml
 - acs-subscription.yaml
 - acs-central.yaml
-#- acs-central-declarative-auth-provider.yaml
+- acs-central-declarative-auth-provider.yaml

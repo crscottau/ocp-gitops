@@ -5,4 +5,4 @@ resources:
 - ../../base
 
 #patchesStrategicMerge:
-#- acs-central-declarative-auth-provider.yaml
+- acs-central-declarative-auth-provider.yaml
