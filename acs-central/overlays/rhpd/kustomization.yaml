@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
 - ../../base
 
-#patchesStrategicMerge:
-- acs-central-declarative-auth-provider.yaml
+patchesStrategicMerge:
+- acs-central-declarative-configmap.yaml

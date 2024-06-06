@@ -1,5 +1,9 @@
 name: OpenShift Auth
 minimumRole: Analyst 
-uiEndpoint: central-central.apps.9ktdj.dynamic.redhatworkshops.io:443 
-extraUIEndpoints: 
-    - central-central.apps.9ktdj.dynamic.redhatworkshops.io:443 
+uiEndpoint: central-central.apps.2b4f4.dynamic.redhatworkshops.io:443 
+groups: 
+    - key: groups
+      value: cluster-admins
+      role: Admin
+openshift: 
+    enable: true
