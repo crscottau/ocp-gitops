@@ -13,7 +13,7 @@ spec:
       files:
         - contents:
             compression: gzip
-            source: data:;base64,H4sIAAAAAAAC/1yRwcrUQAzH73mKwF5ltvVDhO8m3kXQF8jOpO3QaVIy6S716WXaouKxSfrLL/+pbE82FF8DyRY4bYE2zI/NqgNUN/JteXEeJ8cOkuXBh1wY70+ye8mPe5xMZb8fHTCPdZcIC81cnVfsO3yDR5YUl0QpGdeK/cfPoQtd6P9vvL/3MPN+8tnjxQ4z7xWiLgtJmnnHHkYWNnL+WwTRWDKLFx2h6BgnkpGxC5/aV8p2Get4UQFu+FVlyONmjD4xRhU3LbgWEkbRxBVd8UgIqWLRSAW//fx+lqzCDQc1pFLwpTa3GNtPH5CfLJiHRt2RrMEcs2DLBl/ZJySBG25rdWNa/mGGpvWlFH0dxfMkpBhbPoPpcpieJsLe1gagY55KgRv+OGw9L/zHoi1vm9vZ+RendhSdI1U3ixzgBF6vjW+otk4kvwMAAP//Pny0thwCAAA=
+            source: data:;base64,H4sIAAAAAAAC/3SRwYrcMAyG73oKwVyLJ9mhFPZWei+F9gW0tpKYcaQgKzOkT1+chLa07DH6lU+f5Mr2YMMu0BoW1RLEl6A2whn07wUv7wW3/wKobuTr/OQ8To4dJMuDD7kwXh9k15LfrnEyle26J2Ae6yYRZrpzdV6w7/AGb1lSnBOlZFwr9i+fQhe60P8bvL72cOft4LPHkx3uvFWIOs8k6c4b9jCysJHznyKIxpJZvOgIRcc4kYyMXfjYvlK201jHkwpwwS8qQx5XY/SJMaq4acGlkDCKJq7oivt1kCoWjVTw649vR8kqXHBQQyoFn2p3tuOnD8gPFsxDo25I1mCOWbDdBp/ZJySBC65LdWOa/2KGpvW5FH3uxWMlpBjbfQbTeTc9TIS9jQ1Aez+VAhf8vtt6nvm3RRveJre1809ObSk6WqquFjnAATxfG2+otkwkvwIAAP//9d2cnmMCAAA=
           mode: 420
           overwrite: true
           path: /etc/chrony.conf

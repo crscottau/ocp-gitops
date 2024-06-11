@@ -11,7 +11,10 @@ storage:
       overwrite: true
       contents:
         inline: |
-          server ntp.anu.edu.au iburst
+          server 0.au.pool.ntp.org
+          server 1.au.pool.ntp.org
+          server 2.au.pool.ntp.org
+          server 3.au.pool.ntp.org
 
           stratumweight 0
           driftfile /var/lib/chrony/drift
