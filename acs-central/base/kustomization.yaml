@@ -7,3 +7,4 @@ resources:
 - acs-subscription.yaml
 - acs-central.yaml
 - acs-central-declarative-configmap.yaml
+- acs-central-sa-secret.yaml
