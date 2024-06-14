@@ -36,4 +36,6 @@ spec:
         name: volsync
       - enabled: true
         name: cluster-backup
+      - enabled: true
+        name: managedserviceaccount-preview        
   separateCertificateManagement: false
