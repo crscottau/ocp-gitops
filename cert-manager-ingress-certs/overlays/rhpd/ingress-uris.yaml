@@ -4,8 +4,8 @@ metadata:
   name: ingress-cert
   namespace: openshift-ingress
 spec:
-  commonName: "*.apps.w8vz2.dynamic.redhatworkshops.io"
+  commonName: "*.apps.5h5xv.dynamic.redhatworkshops.io"
   dnsNames:
-  - "*.apps.w8vz2.dynamic.redhatworkshops.io"
-  - console-openshift-console.apps.w8vz2.dynamic.redhatworkshops.io
-  - oauth-openshift.apps.w8vz2.dynamic.redhatworkshops.io
+  - "*.apps.5h5xv.dynamic.redhatworkshops.io"
+  - console-openshift-console.apps.5h5xv.dynamic.redhatworkshops.io
+  - oauth-openshift.apps.5h5xv.dynamic.redhatworkshops.io

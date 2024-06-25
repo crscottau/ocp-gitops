@@ -4,6 +4,6 @@ metadata:
   name: api-cert
   namespace: openshift-config
 spec:
-  commonName: api.w8vz2.dynamic.redhatworkshops.io:6443
+  commonName: api.5h5xv.dynamic.redhatworkshops.io:6443
   dnsNames:
-  - api.w8vz2.dynamic.redhatworkshops.io:6443
+  - api.5h5xv.dynamic.redhatworkshops.io:6443
