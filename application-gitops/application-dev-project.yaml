@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: application-1-dev
+  namespace: gitops-application
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"  
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: application 1 development GitOps Project
+  destinations:
+    - name: in-cluster
+      namespace: application-1
+      server: 'https://kubernetes.default.svc'
+  roles:
+    - description: Group to developers to deploy on DEV environment
+      groups:
+        - developers
+      name: developers
+      policies:
+        - p, proj:application-1-dev:developers, applications, get, application-1-dev/*, allow
+        - p, proj:application-1-dev:developers, applications, create, application-1-dev/*, allow
+        - p, proj:application-1-dev:developers, applications, update, application-1-dev/*, allow
+        - p, proj:application-1-dev:developers, applications, delete, application-1-dev/*, allow
+        - p, proj:application-1-dev:developers, applications, sync, application-1-dev/*, allow
+        - p, proj:application-1-dev:developers, applications, override, application-1-dev/*, allow    
+    - description: Group for production deployment
+      groups:
+        - release-coordinators
+      name: release-coordinators
+      policies:
+        - p, proj:application-1-dev:release-coordinators, applications, get, application-1-dev/*, allow
+        - p, proj:application-1-dev:release-coordinators, applications, create, application-1-dev/*, deny
+        - p, proj:application-1-dev:release-coordinators, applications, update, application-1-dev/*, deny
+        - p, proj:application-1-dev:release-coordinators, applications, delete, application-1-dev/*, deny
+        - p, proj:application-1-dev:release-coordinators, applications, sync, application-1-dev/*, deny
+        - p, proj:application-1-dev:release-coordinators, applications, override, application-1-dev/*, deny
+  sourceRepos:
+    - 'https://github.com/crscottau/*'          

@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: application-1-prod
+  namespace: gitops-application
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"  
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: application-1 production Project
+  destinations:
+    - name: prod
+      namespace: application-1-prod
+      server: 'https://kubernetes.default.svc'
+  roles:
+    - description: Group for production deployment
+      groups:
+        - release-coordinators
+      name: release-coordinators
+      policies:
+        - p, proj:application-1-prod:release-coordinators, applications, get, application-1-prod/*, allow
+        - p, proj:application-1-prod:release-coordinators, applications, create, application-1-prod/*, allow
+        - p, proj:application-1-prod:release-coordinators, applications, update, application-1-prod/*, allow
+        - p, proj:application-1-prod:release-coordinators, applications, delete, application-1-prod/*, allow
+        - p, proj:application-1-prod:release-coordinators, applications, sync, application-1-prod/*, allow
+        - p, proj:application-1-prod:release-coordinators, applications, override, application-1-prod/*, allow
+  sourceRepos:
+    - 'https://github.com/crscottau/*'
