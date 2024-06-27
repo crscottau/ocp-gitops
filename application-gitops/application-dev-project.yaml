@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: application-1-dev
-  namespace: gitops-application
+  namespace: application-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "20"  
 spec:
