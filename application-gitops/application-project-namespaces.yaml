@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
-  name: application-1
+  name: application-1-dev
 spec: {}
 ---
 apiVersion: v1
