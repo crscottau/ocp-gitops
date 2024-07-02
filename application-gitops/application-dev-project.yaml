@@ -12,7 +12,7 @@ spec:
   description: application 1 development GitOps Project
   destinations:
     - name: in-cluster
-      namespace: application-1
+      namespace: application-1-dev
       server: 'https://kubernetes.default.svc'
   roles:
     - description: Group to developers to deploy on DEV environment
