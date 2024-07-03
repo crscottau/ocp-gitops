@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "10"
   name: quay-operator
-  namespace: openshift-operators
+  namespace: quay
 spec:
   channel: stable-3.11
   installPlanApproval: Automatic
