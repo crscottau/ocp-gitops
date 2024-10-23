@@ -19,4 +19,3 @@ Need to extract the CA certificates from the cluster to run the bootstrap:
 `$ oc get configmap -n openshift-kube-apiserver  kube-root-ca.crt -o jsonpath='{.data.ca\.crt}' > kube-root-ca.crt`
 
 Note that the filename is referenced in `connection.yaml`.
-
