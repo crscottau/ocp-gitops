@@ -1,0 +1,12 @@
+apiVersion: config.opens
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: Local 
+    mappingMethod: claim
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: htpasswd

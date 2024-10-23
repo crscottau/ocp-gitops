@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-cert
+  namespace: openshift-ingress
+spec:
+  commonName: "*.apps.fhfb4.dynamic.redhatworkshops.io"
+  dnsNames:
+  - "*.apps.fhfb4.dynamic.redhatworkshops.io"
+  - console-openshift-console.apps.fhfb4.dynamic.redhatworkshops.io
+  - oauth-openshift.apps.fhfb4.dynamic.redhatworkshops.io
