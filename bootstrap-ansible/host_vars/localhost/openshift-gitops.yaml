@@ -1,1 +1,3 @@
 openshift_gitops_channel: latest
+gitops_application_path: applications/overlays/sno
+gitops_application_repo: https://github.com/crscottau/ocp-gitops.git

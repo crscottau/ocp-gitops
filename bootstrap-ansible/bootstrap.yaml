@@ -203,8 +203,8 @@
             directory:
               jsonnet: {}
               recurse: true
-            path: applications
-            repoURL: https://github.com/crscottau/ocp-gitops.git
+            path: "{{ gitops_application_path }}"
+            repoURL: "{{ gitops_application_repo }}"
             targetRevision: HEAD
           syncPolicy:
             automated: {}
