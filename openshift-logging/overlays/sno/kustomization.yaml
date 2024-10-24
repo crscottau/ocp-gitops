@@ -3,11 +3,6 @@ kind: Kustomization
 
 resources:
 - ../../base
-- oauth-htpasswd.yaml
 
 patchesStrategicMerge:
-- cert-manager-ingress-certs.yaml
-- openshift-logging.yaml
-
-
-
+- logging-cluster-log-forwarder.yaml
