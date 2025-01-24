@@ -1,0 +1,73 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: update-scanner-vulns-cronjob
+  namespace: central
+spec:     
+  # Run every 4 hours                                                                           
+  schedule: "* */4 * * *"                                                    
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      ttlSecondsAfterFinished: 86400                                                  
+      template:
+        spec:
+          initContainers:
+            - name: download-definitions
+              image: "registry.redhat.io/openshift4/ose-cli@sha256:7aa4524899d8e82ce2f144b156125f53ef8ab6a6034cef9c44633a69bd9f59a6"
+              command:
+                - "/bin/bash"
+                - "-c"
+                - "echo Downloading; export HTTPS_PROXY=http://${proxy_username}:${proxy_password}@${proxy_address};curl ${vuln_url} -o /definitions/scanner-vuln-updates.zip; ls -l /definitions"
+              env:
+                - name: proxy_username
+                  valueFrom:
+                    secretKeyRef:
+                      name: proxy-config
+                      key: proxy_username
+                - name: proxy_password
+                  valueFrom:
+                    secretKeyRef:
+                      name: proxy-config
+                      key: proxy_password
+                - name: proxy_address
+                  valueFrom:
+                    secretKeyRef:
+                      name: proxy-config
+                      key: proxy_address
+                - name: vuln_url
+                  valueFrom:
+                    configMapKeyRef:
+                      name: update-vuln-source
+                      key: url                      
+              volumeMounts:
+                - name: definitions
+                  mountPath: /definitions
+          containers:
+            - name: upload-definitions
+              image: 'registry.redhat.io/advanced-cluster-security/rhacs-main-rhel8@sha256:2324000b14f541648d60ce899be66a6f0b3d080812bc85cd5c44d5c6dadf1d39'
+              command:
+                - "/bin/bash"
+                - "-c"
+                - "echo Uploading; roxctl scanner upload-db --token-file /token/rox-api-token --endpoint ${CENTRAL_ENDPOINT}:${CENTRAL_PORT} --scanner-db-file /definitions/scanner-vuln-updates.zip"
+              env:
+                - name: CENTRAL_ENDPOINT
+                  value: 'central'
+                - name: CENTRAL_PORT
+                  value: '443'                  
+              volumeMounts:
+                - name: definitions
+                  mountPath: /definitions
+                - name: rox-api-token
+                  mountPath: /token
+          volumes:
+            - name: definitions
+              emptyDir: {}
+            - name: rox-api-token
+              secret:
+                secretName: rox-api-token
+          restartPolicy: "Never"
+          terminationGracePeriodSeconds: 30
+          activeDeadlineSeconds: 500
+          dnsPolicy: "ClusterFirst"

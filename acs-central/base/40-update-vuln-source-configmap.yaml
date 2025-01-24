@@ -1,0 +1,11 @@
+#
+# Description: This ConfigMap contains the URL for ACS scanner vulnerability downloads cronjob.
+#
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: central
+  name: update-vuln-source
+data:
+  url: https://install.stackrox.io/scanner/scanner-vuln-updates.zip
