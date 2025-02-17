@@ -4,6 +4,6 @@ metadata:
   name: api-cert
   namespace: openshift-config
 spec:
-  commonName: api.fhfb4.dynamic.redhatworkshops.io:6443
+  commonName: api.ocp4.spenscot.ddns.net:6443
   dnsNames:
-  - api.fhfb4.dynamic.redhatworkshops.io:6443
+  - api.ocp4.spenscot.ddns.net:6443
