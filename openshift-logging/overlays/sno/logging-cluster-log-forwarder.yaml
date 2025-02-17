@@ -14,8 +14,6 @@ spec:
         rfc: RFC5424
         facility: '23'
         appName: OCP
-        msgID: OCP
-        addLogSource: true
       type: syslog
   filters:
     - name: drop-get-list-watch
