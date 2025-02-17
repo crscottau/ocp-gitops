@@ -1,4 +1,4 @@
-apiVersion: logging.openshift.io/v1
+apiVersion: observability.openshift.io/v1
 kind: ClusterLogForwarder
 metadata:
   name: instance-rsyslog
@@ -10,13 +10,13 @@ spec:
   outputs:
     - name: remote-rsyslog
       syslog:
+        url: 'tcp://192.168.123.1:30514'
         rfc: RFC5424
         facility: '23'
         appName: OCP
         msgID: OCP
         addLogSource: true
       type: syslog
-      url: 'tcp://192.168.123.1:30514'
   filters:
     - name: drop-get-list-watch
       type: drop
