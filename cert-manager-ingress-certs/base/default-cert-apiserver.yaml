@@ -6,6 +6,6 @@ spec:
   servingCerts: 
     namedCertificates:
       - names: 
-          - api.q6bbt.dynamic.opentlc.com
+          - api.name.domain
         servingCertificate: 
           name: custom-certs-managed
