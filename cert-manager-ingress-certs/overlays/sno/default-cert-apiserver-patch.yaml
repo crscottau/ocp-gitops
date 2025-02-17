@@ -7,3 +7,5 @@ spec:
     namedCertificates:
       - names: 
           - api.ocp4.spenscot.ddns.net
+        servingCertificate: 
+          name: custom-certs-managed
