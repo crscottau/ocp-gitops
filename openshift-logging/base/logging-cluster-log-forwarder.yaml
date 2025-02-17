@@ -7,7 +7,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "10"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
 spec:
-  serviceAccount: cluster-logging-sa
+  serviceAccount: 
+    name: cluster-logging-sa
   pipelines:
     - inputRefs:
         - application
