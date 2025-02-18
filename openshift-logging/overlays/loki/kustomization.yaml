@@ -6,4 +6,4 @@ resources:
 
 patches:
 - path: logging-sub-patch.yaml
-- path: logging-logging.yaml
+- path: lokistack-logging.yaml
