@@ -4,16 +4,16 @@ metadata:
   name: openshift-logging
   namespace: openshift-gitops
 spec:
-#  destination:
-#    namespace: openshift-logging
-#    server: https://kubernetes.default.svc
-#  project: default
+  destination:
+    namespace: openshift-logging
+    server: https://kubernetes.default.svc
+  project: default
   source:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
     path: openshift-logging/overlays/sno
     repoURL: https://github.com/crscottau/ocp-gitops.git
-#    targetRevision: HEAD
-#  syncPolicy:
-#    automated: {}
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
