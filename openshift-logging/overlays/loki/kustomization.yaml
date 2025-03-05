@@ -3,7 +3,8 @@ kind: Kustomization
 
 resources:
 - ../../base
+- lokistack-logging.yaml
+- logging-loki-cluster-log-forwarder.yaml
 
 patches:
 - path: logging-sub-patch.yaml
-- path: lokistack-logging.yaml
