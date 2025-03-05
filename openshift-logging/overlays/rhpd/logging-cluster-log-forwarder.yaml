@@ -30,6 +30,12 @@ spec:
         - test:
           - field: .verb
             matches: "watch"
+        - test:
+          - field: .username
+            matches: "system:serviceaccount:.+?"  
+        - test:
+          - field: .user.username
+            matches: "system:serviceaccount:.+?" 
   pipelines:
     - name: forward-to-remote
       inputRefs:
@@ -38,3 +44,5 @@ spec:
         - remote-rsyslog
       filterRefs:
         - drop-get-list-watch
+  serviceAccount:
+    name: cluster-logging-sa        
