@@ -1,0 +1,15 @@
+apiVersion: observability.openshift.io/v1alpha1
+kind: UIPlugin
+metadata:
+  annotations:
+    observability.openshift.io/api-support: GeneralAvailability
+    argocd.argoproj.io/sync-wave: "30"
+    argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"    
+  name: logging
+spec:
+  logging:
+    logsLimit: 50
+    lokiStack:
+      name: lokistack-logging
+    timeout: 30s
+  type: Logging
