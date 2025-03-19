@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - ../../base
+- another-configmap.yaml
 
 patches:
 - path: configmap.yaml
