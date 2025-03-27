@@ -4,7 +4,8 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "30"
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"
-  name: lokistack-logging
+#  name: lokistack-logging
+  name: lokistack-logging-audit
   namespace: openshift-logging
 spec:
   managementState: Managed
@@ -14,8 +15,9 @@ spec:
     - effectiveDate: '2024-10-01'
       version: v13
     secret:
-      name: lokistack-logging-secret
+      #name: lokistack-logging-secret
+      name: lokistack-logging-audit-secret
       type: s3
-  storageClassName: nfs-client
+  storageClassName: thin-csi
   tenants:
     mode: openshift-logging
