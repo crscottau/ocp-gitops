@@ -9,5 +9,5 @@ spec:
   channel: stable-3.13
   installPlanApproval: Automatic
   name: quay-operator
-  source: cs-redhat-operator-index-v4-16
+  source: redhat-operators
   sourceNamespace: openshift-marketplace
