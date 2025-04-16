@@ -1,0 +1,10 @@
+---
+- op: replace
+  path: "/spec/identityproviders/0/name"
+  value: Local
+- op: replace
+  path: "/spec/identityproviders/0/mappingMethod"
+  value: claim
+- op: replace
+  path: "/spec/identityproviders/0/htpasswd/fileData/name"
+  value: htpasswd  

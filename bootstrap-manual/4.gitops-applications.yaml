@@ -5,14 +5,14 @@ metadata:
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: openshift-operators
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: default
   source:
     directory:
       jsonnet: {}
       recurse: true
-    path: gitops/applications/overlays/sno
+    path: applications/sno
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:

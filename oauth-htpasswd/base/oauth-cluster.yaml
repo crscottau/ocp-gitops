@@ -4,9 +4,9 @@ metadata:
   name: cluster
 spec:
   identityProviders:
-  - name: Local 
-    mappingMethod: claim
+  - name: name 
+    mappingMethod: method
     type: HTPasswd
     htpasswd:
       fileData:
-        name: htpasswd
+        name: secret
