@@ -8,11 +8,10 @@ resources:
 
 patches:
 - path: configmap.yaml
-
-patchesStrategicMerge:
-- |-
-  apiVersion: v1
-  kind: ConfigMap
-  metadata:
-    name: random
-  $patch: delete
+- patch: |-
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: random
+      namespace: test
+    $patch: delete
