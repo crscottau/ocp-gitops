@@ -3,8 +3,17 @@ kind: Kustomization
 
 resources:
 - ../../base
-- another-configmap.yaml
+#- another-configmap.yaml
 - yet-another-configmap.yaml
 
 patches:
 - path: configmap.yaml
+
+patchesStrategicMerge:
+- |-
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: random
+    namespace: test
+  $patch: delete
