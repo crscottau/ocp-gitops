@@ -15,5 +15,4 @@ patchesStrategicMerge:
   kind: ConfigMap
   metadata:
     name: random
-    namespace: test
   $patch: delete
