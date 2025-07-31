@@ -7,3 +7,11 @@ resources:
 
 patches:
 - path: configmap.yaml
+- patch: |-
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: random
+      namespace: test
+    $patch: delete
+
