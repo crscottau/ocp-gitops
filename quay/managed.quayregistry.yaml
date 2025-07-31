@@ -7,4 +7,4 @@ spec:
   configBundleSecret: quay-registry-config-bundle
   components:
   - kind: clair
-    managed: false
+    managed: true
