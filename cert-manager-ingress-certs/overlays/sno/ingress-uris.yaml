@@ -4,8 +4,8 @@ metadata:
   name: ingress-cert
   namespace: openshift-ingress
 spec:
-  commonName: "*.apps.ocp4.spenscot.ddns.net"
+  commonName: "*.apps.disc.spenscot.ddns.net"
   dnsNames:
-  - "*.apps.ocp4.spenscot.ddns.net"
-  - console-openshift-console.apps.cop4.spenscot.ddns.net
-  - oauth-openshift.apps.ocp4.spenscot.ddns.net
+  - "*.apps.disc.spenscot.ddns.net"
+  - console-openshift-console.apps.disc.spenscot.ddns.net
+  - oauth-openshift.apps.disc.spenscot.ddns.net
