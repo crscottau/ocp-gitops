@@ -7,4 +7,4 @@ resources:
 - logging-sub.yaml
 - logging-crb.yaml  
 - logging-serviceaccount.yaml  
-#- logging-cluster-log-forwarder.yaml  
+- logging-cluster-log-forwarder.yaml  
