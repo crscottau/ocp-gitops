@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
 - gitops-resource-tracking.yaml
-- 99-control-plane-chrony-conf-override
-- 99-compute-chrony-conf-override
+- 99-control-plane-chrony-conf-override.yaml
+- 99-compute-chrony-conf-override.yaml
