@@ -33,4 +33,4 @@ storage:
           # Allow NTP client access from the local network.
           allow all
           # Serve time even if not synchronized to a time source.
-          local stratum 3 orphan
+          local stratum 4 orphan
