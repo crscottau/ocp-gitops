@@ -8,13 +8,20 @@ metadata:
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"  
 spec:
   outputs:
-    - name: remote-rsyslog
+    - name: remote-rsyslog-audit
       syslog:
-        url: 'tcp://192.168.123.1:30514'
+        url: 'tcp://192.168.124.1:30514'
         rfc: RFC5424
         facility: '23'
         appName: OCP
       type: syslog
+    - name: remote-rsyslog-tekton
+      syslog:
+        url: 'tcp://192.168.124.1:30515'
+        rfc: RFC5424
+        facility: '23'
+        appName: Tekton
+      type: syslog      
   filters:
     - name: drop-get-list-watch
       type: drop
@@ -34,13 +41,25 @@ spec:
         - test:
           - field: .user.username
             matches: "system:serviceaccount:.+?" 
+     
   pipelines:
     - name: forward-to-remote
       inputRefs:
         - audit
       outputRefs:
-        - remote-rsyslog
+        - remote-rsyslog-audit
       filterRefs:
         - drop-get-list-watch
+    - name: forward-tekton-logs
+      inputRefs:
+        - tekton-logs-only
+      outputRefs:
+        - remote-rsyslog-tekton 
+  inputs:
+    - name: tekton-logs-only
+      application:
+        selector:
+          matchLabels:
+            tekton.dev/memberOf: tasks
   serviceAccount:
     name: cluster-logging-sa        
