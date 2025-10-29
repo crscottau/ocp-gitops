@@ -43,13 +43,13 @@ spec:
             matches: "system:serviceaccount:.+?" 
      
   pipelines:
-    - name: forward-to-remote
-      inputRefs:
-        - audit
-      outputRefs:
-        - remote-rsyslog-audit
-      filterRefs:
-        - drop-get-list-watch
+    #- name: forward-audit-to-remote
+    #  inputRefs:
+    #    - audit
+    #  outputRefs:
+    #    - remote-rsyslog-audit
+    #  filterRefs:
+    #    - drop-get-list-watch
     - name: forward-tekton-logs
       inputRefs:
         - tekton-logs-only
