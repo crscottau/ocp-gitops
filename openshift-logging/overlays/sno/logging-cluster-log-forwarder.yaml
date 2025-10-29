@@ -57,6 +57,7 @@ spec:
         - remote-rsyslog-tekton 
   inputs:
     - name: tekton-logs-only
+      type: application    
       application:
         selector:
           matchLabels:
