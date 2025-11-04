@@ -1,0 +1,18 @@
+apiVersion: config.openshift.io/v1
+kind: ImageTagMirrorSet
+metadata:
+  name: itms-generic-0
+spec:
+  imageTagMirrors:
+    - mirrors:
+        - harbor.spenscot.ddns.net/registry.k8s.io/csi-secrets-store
+      source: registry.k8s.io/csi-secrets-store  
+    - mirrors:
+        - harbor.spenscot.ddns.net/registry.k8s.io/sig-storage
+      source: registry.k8s.io/sig-storage
+    - mirrors:
+        - harbor.spenscot.ddns.net/library/oss
+      source: mcr.microsoft.com/oss
+    - mirrors:
+        - harbor.spenscot.ddns.net/registry-redhat-io/ubi9
+      source: registry.redhat.io/ubi9      

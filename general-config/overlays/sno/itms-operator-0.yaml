@@ -1,0 +1,9 @@
+apiVersion: config.openshift.io/v1
+kind: ImageTagMirrorSet
+metadata:
+  name: itms-operator-0
+spec:
+  imageTagMirrors:
+    - mirrors:
+        - harbor.spenscot.ddns.net/registry-redhat-io/redhat
+      source: registry.redhat.io/redhat

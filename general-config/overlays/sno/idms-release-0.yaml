@@ -1,0 +1,10 @@
+apiVersion: config.openshift.io/v1
+kind: ImageDigestMirrorSet
+metadata:
+  name: idms-release-0
+spec:
+  imageDigestMirrors:
+    - mirrors:
+        - harbor.spenscot.ddns.net/quay/openshift-release-dev
+        - 'mirror.spenscot.ddns.net:8443/ocp4/openshift-release-dev'
+      source: quay.io/openshift-release-dev
