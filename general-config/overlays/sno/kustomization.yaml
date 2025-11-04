@@ -4,6 +4,11 @@ kind: Kustomization
 resources:
 - ../../base
 - 99-control-plane-chrony-conf-override.yaml
+- idms-release-0.yaml
+- idms-operator-0.yaml
+- itms-release-0.yaml
+- itms-operator-0.yaml
+- itms-generic-0.yaml
 
 #patchesStrategicMerge:
 #- cert-manager-ca-root-secret-patch.yaml
