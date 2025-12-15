@@ -73,6 +73,6 @@ spec:
         - 'mirror.spenscot.ddns.net:8443/ocp4/ubi8'
       source: registry.redhat.io/ubi8
     - mirrors:
-        - harbor.spenscot.ddns.net/registry-redhat-io/penshift-serverless-1
+        - harbor.spenscot.ddns.net/registry-redhat-io/openshift-serverless-1
         - 'mirror.spenscot.ddns.net:8443/ocp4/openshift-serverless-1'
       source: registry.redhat.io/openshift-serverless-1
