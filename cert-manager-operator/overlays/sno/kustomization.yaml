@@ -6,5 +6,3 @@ resources:
 - configmap-custom-ca.yaml
 - proxy-cluster.yaml
 
-patchesStrategicMerge:
-- cert-manager-ca-root-secret-patch.yaml
