@@ -7,3 +7,4 @@ resources:
 patchesStrategicMerge:
 - api-uris.yaml
 - ingress-uris.yaml
+- default-cert-apiserver-patch.yaml
