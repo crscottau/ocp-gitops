@@ -10,5 +10,5 @@ resources:
 - itms-operator-0.yaml
 - itms-generic-0.yaml
 
-#patchesStrategicMerge:
-#- cert-manager-ca-root-secret-patch.yaml
+#patches:
+#- path: cert-manager-ca-root-secret-patch.yaml

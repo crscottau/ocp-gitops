@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
 - ../../base
 
-patchesStrategicMerge:
-- logging-cluster-log-forwarder.yaml
+patches:
+- path: logging-cluster-log-forwarder.yaml

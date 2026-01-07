@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - ../../base
 
-patchesStrategicMerge:
-- api-uris.yaml
-- ingress-uris.yaml
-- default-cert-apiserver-patch.yaml
+patches:
+- path: api-uris.yaml
+- path: ingress-uris.yaml
+- path: default-cert-apiserver-patch.yaml
