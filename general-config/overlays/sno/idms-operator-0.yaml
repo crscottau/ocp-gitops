@@ -76,3 +76,7 @@ spec:
         - harbor.spenscot.ddns.net/registry-redhat-io/openshift-serverless-1
         - 'mirror.spenscot.ddns.net:8443/ocp4/openshift-serverless-1'
       source: registry.redhat.io/openshift-serverless-1
+    - mirrors:
+        - harbor.spenscot.ddns.net/registry-redhat-io/advanced-cluster-security
+        - 'mirror.spenscot.ddns.net:8443/ocp4/advanced-cluster-security'
+      source: registry.redhat.io/advanced-cluster-security
