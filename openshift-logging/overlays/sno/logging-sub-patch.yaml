@@ -4,4 +4,4 @@ metadata:
   name: cluster-logging
   namespace: openshift-logging 
 spec:
-  channel: stable-6.3
+  channel: stable-6.4
