@@ -5,4 +5,4 @@ resources:
 - quay-namespace.yaml
 - quay-operatorgroup.yaml
 - quay-subscription.yaml
-- amanaged-quayregistry.yaml
+- managed-quayregistry.yaml
