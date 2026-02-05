@@ -12,7 +12,7 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: quay
+    path: quay/base
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
