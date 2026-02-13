@@ -2,8 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-  annotations:
-    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-wave: "10"
   name: cert-manager-operator
   namespace: openshift-gitops
 spec:
@@ -12,10 +11,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-#    directory:
-#      jsonnet: {}
-#      recurse: false
-    path: cert-manager-operator
+##    directory:
+##      jsonnet: {}
+##      recurse: false
+    path: cert-manager-operator/overlays/sno
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
