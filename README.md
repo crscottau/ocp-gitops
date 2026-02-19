@@ -1,5 +1,7 @@
 # Configuring a cluster
 
+Using OpenShift GitOps to configure a cluster
+
 ## Overview
 
 Manually apply the filers in gitops/bootstrap (not including subdirectories).
