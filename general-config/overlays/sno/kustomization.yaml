@@ -9,6 +9,7 @@ resources:
 - idms-operator-certified.yaml
 - itms-release-0.yaml
 - itms-operator-0.yaml
+- itms-operator-certified.yaml
 - itms-generic-0.yaml
 
 #patches:

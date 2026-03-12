@@ -1,0 +1,9 @@
+apiVersion: config.openshift.io/v1
+kind: ImageTagMirrorSet
+metadata:
+  name: itms-operator-certified
+spec:
+  imageTagMirrors:
+    - mirrors:
+        - harbor.spenscot.ddns.net/ghcr-io/cloudnative-pg
+      source: ghcr.io/cloudnative-pg  
