@@ -5,5 +5,8 @@ metadata:
 spec:
   imageDigestMirrors:
     - mirrors:
+        - harbor.spenscot.ddns.net/registry-connect-redhat-com
+      source: registry.connect.redhat.com   
+    - mirrors:
         - harbor.spenscot.ddns.net/ghcr-io/cloudnative-pg
       source: ghcr.io/cloudnative-pg  
