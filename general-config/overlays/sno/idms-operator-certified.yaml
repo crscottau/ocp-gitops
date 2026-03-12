@@ -1,0 +1,9 @@
+apiVersion: config.openshift.io/v1
+kind: ImageDigestMirrorSet
+metadata:
+  name: idms-operator-certified
+spec:
+  imageDigestMirrors:
+    - mirrors:
+        - harbor.spenscot.ddns.net/ghcr-io/cloudnative-pg
+      source: ghcr.io/cloudnative-pg  
