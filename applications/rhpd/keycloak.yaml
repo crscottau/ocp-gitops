@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
-  name: acm
+  name: keycloak
   namespace: openshift-gitops
 spec:
   destination:
@@ -14,8 +14,9 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: acm
+    path: keycloak/overlays/rhpd
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}
+

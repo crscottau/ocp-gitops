@@ -1,0 +1,24 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  name: keycloak
+  namespace: keycloak
+spec:
+  db:
+    host: keycloak-pg-cluster-rw
+    passwordSecret:
+      key: password
+      name: keycloak-pg-cluster-app
+    usernameSecret:
+      key: username
+      name: keycloak-pg-cluster-app
+    vendor: postgres
+  hostname:
+    hostname: keycloak.apps.disc.spenscot.ddns.net
+  http:
+    httpEnabled: true
+  instances: 1
+  proxy:
+    headers: xforwarded

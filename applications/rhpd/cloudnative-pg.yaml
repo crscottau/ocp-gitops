@@ -1,9 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "10"
-  name: acm-oauth-policy
+  name: cloudnative-pg-operator
   namespace: openshift-gitops
 spec:
   destination:
@@ -14,10 +12,8 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: acm-oauth-policy
+    path: cloudnative-pg/base
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}
-    syncOptions:
-      - CreateNamespace=true
