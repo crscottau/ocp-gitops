@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- keycloak-ns.yaml
+- rhbk-operator-og.yaml
+- rhbk-operator-sub.yaml
+- keycloak-cnpg.yaml  
+- ocp-admins-crb.yaml 
+- keycloak.yaml
+- oauth-cluster.yaml    
