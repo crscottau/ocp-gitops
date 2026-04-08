@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/validations/0/expression
+  value: "(has(object.spec.commonName) && object.spec.commonName.endsWith('spenscot.ddns.net') && object.spec.dnsNames.all(x, x.endsWith('spenscot.ddns.net'))) || (!has(object.spec.commonName) && object.spec.dnsNames.all(x, x.endsWith('spenscot.ddns.net')))"

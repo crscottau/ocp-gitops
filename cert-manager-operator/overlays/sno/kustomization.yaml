@@ -6,3 +6,8 @@ resources:
 - configmap-custom-ca.yaml
 - proxy-cluster.yaml
 
+patches:
+- path: cert-manager-certificate-policy-patch.yaml
+  target:
+    kind: "ValidatingAdmissionPolicy"
+    name: cert-manager-certificate-policy

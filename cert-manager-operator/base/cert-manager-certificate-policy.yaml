@@ -1,0 +1,24 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: cert-manager-certificate-domain-policy
+spec:
+  failurePolicy: Fail
+  paramKind:
+    apiVersion: v1
+    kind: ConfigMap
+  matchConstraints:
+    resourceRules:
+    - apiGroups:   ["cert-manager.io"]
+      apiVersions: ["v1"]
+      operations:  ["CREATE", "UPDATE"]
+      resources:   ["certificates"]
+  validations:
+    # If the certificate specifies a commonName, then both the commonName and DNS name(s) must end with the domain
+    # If the certificate does not specify a commonName, then the DNS name(s) must all end with the domain
+#    - expression: "object.spec.commonName.endsWith(params.data.domainName) && object.spec.dnsNames.all(x, x.endsWith(params.data.domainName))"
+    - expression: "(has(object.spec.commonName) && object.spec.commonName.endsWith('<DOMAIN>') && object.spec.dnsNames.all(x, x.endsWith('<DOMAIN>'))) || (!has(object.spec.commonName) && object.spec.dnsNames.all(x, x.endsWith('<DOMAIN>')))"
+      reason: Invalid
+    # If a duration is specified, it must be less than the allowed value (47 days)
+    - expression: "!has(object.spec.duration) || duration(object.spec.duration).getHours() <= 1128"
+      reason: Invalid
