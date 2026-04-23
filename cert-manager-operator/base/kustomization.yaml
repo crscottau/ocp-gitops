@@ -6,5 +6,5 @@ resources:
 - cert-manager-og.yaml
 - cert-manager-sub.yaml
 - cert-manager-cluster-issuer.yaml
-- cert-manager=certificate-policy.yaml
-- cert-manager=certificate-policy-binding.yaml
+#- cert-manager-certificate-policy.yaml
+#- cert-manager-certificate-policy-binding.yaml

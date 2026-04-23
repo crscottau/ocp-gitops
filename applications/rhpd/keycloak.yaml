@@ -14,7 +14,7 @@ spec:
 #    directory:
 #      jsonnet: {}
 #      recurse: false
-    path: keycloak/overlays/rhpd
+    path: keycloak/overlays/rhdp
     repoURL: https://github.com/crscottau/ocp-gitops.git
     targetRevision: HEAD
   syncPolicy:
