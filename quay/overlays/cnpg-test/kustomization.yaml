@@ -16,5 +16,6 @@ patches:
       name: quay-registry
       namespace: quay
     spec:
+      components:
       - kind: postgres
         managed: false   
