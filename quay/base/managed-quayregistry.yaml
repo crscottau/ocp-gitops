@@ -4,7 +4,7 @@ metadata:
   name: quay-registry
   namespace: quay
   annotations:
-    argocd.argoproj.io/sync-wave: "20"  
+    argocd.argoproj.io/sync-wave: "50"  
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"    
 spec:
   configBundleSecret: quay-registry-config-bundle
