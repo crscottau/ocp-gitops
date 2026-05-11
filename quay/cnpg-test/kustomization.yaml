@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+- cnpg-sub.yaml
+- cnpg-cluster.yaml
+- quay-database-extension-enable-job
+
+patches:
+# Turn off the Quay managed database
+- patch: |-
+    apiVersion: quay.redhat.com/v1
+    kind: QuayRegistry
+    metadata:
+      name: quay-registry
+      namespace: quay
+    spec:
+      - kind: postgres
+        managed: false   

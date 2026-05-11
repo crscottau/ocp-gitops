@@ -1,0 +1,62 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "30"  
+  name: quay-database-extension-enable-job
+  namespace: quay
+spec:
+  completions: 1
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+        - name: enable-extension
+          env: 
+            - name: POSTGRESQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: quay-registry-quay-postgres-app
+                  key: user
+            - name: POSTGRESQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: quay-registry-quay-postgres-app
+                  key: dbname
+            - name: POSTGRESQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: quay-registry-quay-postgres-app
+                  key: password
+            - name: POSTGRESQL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: quay-registry-quay-postgres-app
+                  key: host  
+            - name: POSTGRESQL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: quay-registry-quay-postgres-app
+                  key: port           
+          image: 'ghcr.io/cloudnative-pg/postgresql:18.3-system-trixie'
+          command:
+            - /bin/bash
+            - '-c'
+            - |
+              set -euo pipefail
+              export PGPASSWORD=${POSTGRESQL_PASSWORD}
+              psql --dbname=${POSTGRESQL_DATABASE} --host=${POSTGRESQL_HOST} --port=${POSTGRESQL_PORT} --username=${POSTGRESQL_USER} --command "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+          resources:
+            requests:
+              cpu: 10m
+              memory: 50Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: FallbackToLogsOnError
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            allowPrivilegeEscalation: false
+      restartPolicy: Never
