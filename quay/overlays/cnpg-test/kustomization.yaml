@@ -5,7 +5,7 @@ resources:
 - ../../base
 - cnpg-sub.yaml
 - cnpg-cluster.yaml
-- quay-database-extension-enable-job
+- quay-database-extension-enable-job.yaml
 
 patches:
 # Turn off the Quay managed database
