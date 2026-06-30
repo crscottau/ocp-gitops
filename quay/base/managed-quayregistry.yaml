@@ -12,7 +12,7 @@ spec:
     - kind: quay	
       managed: true	
     - kind: postgres
-      managed: true      
+      managed: false      
     - kind: clair	
       managed: true	
     - kind: redis	
