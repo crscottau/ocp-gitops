@@ -13,9 +13,9 @@ spec:
     # As I'm testing with an ODF MCG I was getting SSL handshake errors, so I had to add the CA cert for the endpoint. If you're using a different object store you may not need this.
     # `oc -n openshift-storage get configmap openshift-service-ca.crt -o jsonpath="{.data['service-ca\.crt']}" > /tmp/mcg-internal-ca.crt`
     # `oc -n quay create secret generic openshift-serving-ca --from-file=ca.crt=/tmp/mcg-internal-ca.crt`
-    endpointCA:
-      name: openshift-serving-ca
-      key: ca.crt
+#    endpointCA:
+#      name: openshift-serving-ca
+#      key: ca.crt
     s3Credentials:
       accessKeyId:
         name: quay-backups
