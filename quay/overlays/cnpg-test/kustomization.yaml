@@ -5,8 +5,11 @@ resources:
 - ../../base
 - cnpg-cluster.yaml
 - quay-database-extension-enable-job.yaml
+- barman-plugin-manifest-0.13.0.yaml  
+- cnpg-quay-objectstore.yaml
 
 patches:
+
 # Turn off the Quay managed database
 - patch: |-
     apiVersion: quay.redhat.com/v1
