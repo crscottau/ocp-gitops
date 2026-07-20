@@ -2,7 +2,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "20"  
+    argocd.argoproj.io/sync-wave: "30"  
     argocd.argoproj.io/sync-options: "SkipDryRunOnMissingResource=true"    
   name: quay-registry-quay-postgres
   namespace: quay
@@ -27,7 +27,18 @@ spec:
   
   storage:
     size: 50Gi
-  
+
+  # Enable WAL archiving to the Barman Cloud plugin
+  plugins:
+  - enabled: true
+    isWALArchiver: true
+    name: barman-cloud.cloudnative-pg.io
+    parameters:
+      barmanObjectName: quay-db-objectstore
+
+  backup:
+    target: prefer-standby
+      
 #  # 1. Faster failure detection
 #  probes:
 #    readiness:

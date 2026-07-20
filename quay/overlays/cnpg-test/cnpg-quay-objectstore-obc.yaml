@@ -1,0 +1,11 @@
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: quay-backups
+  namespace: quay
+spec:
+  additionalConfig:
+    bucketclass: noobaa-default-bucket-class
+  generateBucketName: cnpg-backup
+  objectBucketName: quay-backup-b3c897dd-3f2b-4ab2-ad45-d3afb146b62a
+  storageClassName: openshift-storage.noobaa.io
