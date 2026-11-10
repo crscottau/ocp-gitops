@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: declarative-configurations
-  namespace: central
+  namespace: rhacs-operator
 data: {}

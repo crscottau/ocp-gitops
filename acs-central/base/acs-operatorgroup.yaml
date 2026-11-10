@@ -4,5 +4,5 @@ metadata:
   annotations:
     olm.providedAPIs: Central.v1alpha1.platform.stackrox.io,SecuredCluster.v1alpha1.platform.stackrox.io,SecurityPolicy.v1alpha1.config.stackrox.io
   name: rhacs-operatorgroup
-  namespace: central
+  namespace: rhacs-operator
 spec: {}

@@ -2,7 +2,7 @@ kind: CronJob
 apiVersion: batch/v1
 metadata:
   name: update-scanner-vulns-cronjob
-  namespace: central
+  namespace: rhacs-operator
 spec:     
   # Run every 4 hours                                                                           
   schedule: "* */4 * * *"                                                    

@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: central-default-tls-cert 
+  namespace: rhacs-operator
+spec:
+  # The Secret where cert-manager will store the generated certificate and private key
+  secretName: central-default-tls-cert 
+
+  # Validity period and auto-renewal window
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days before expiration
+
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+    rotationPolicy: Always
+
+  usages:
+    - server auth
+    - client auth
+
+  # FQDN of your OpenShift Route / Ingress endpoint
+  dnsNames:
+    - central-rhacs-operator.apps.cluster-zg787.dyn.redhatworkshops.io
+
+  # Reference to the Issuer or ClusterIssuer handling the signing request
+  issuerRef:
+    name: acme-bifrost-production-ddns
+    kind: ClusterIssuer
+    group: cert-manager.io

@@ -5,7 +5,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: central
+  namespace: rhacs-operator
   name: update-vuln-source
 data:
   url: https://install.stackrox.io/scanner/scanner-vuln-updates.zip
