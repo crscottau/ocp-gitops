@@ -24,10 +24,10 @@ spec:
 
   # FQDN of your OpenShift Route / Ingress endpoint
   dnsNames:
-    - central-rhacs-operator.apps.cluster-zg787.dyn.redhatworkshops.io
+    - <DNSNAME>
 
   # Reference to the Issuer or ClusterIssuer handling the signing request
   issuerRef:
-    name: acme-bifrost-production-ddns
+    name: <CLUSTERISSUER>
     kind: ClusterIssuer
     group: cert-manager.io

@@ -6,3 +6,15 @@ resources:
 
 patches:
 - path: acs-central-declarative-configmap.yaml
+
+- target:
+    kind: Certificate
+    name: central-default-tls-cert 
+  patch: |-
+    - op: replace
+      path: /spec/dnsNames
+      value: 
+        - central-rhacs-operator.apps.cluster-pqn49.dyn.redhatworkshops.io
+    - op: replace
+      path: /spec/issuerRef/name
+      value: acme-bifrost-production-ddns
